@@ -9,38 +9,34 @@ public class CharacterCoordinates {
 
     public int[] solution(String[] keyinput, int[] board) {
         int[] answer = {0, 0};
-        int x = (board[0]/2);
-        int y = (board[1]/2);
+        int x = (board[0] / 2);
+        int y = (board[1] / 2);
         for (String s : keyinput) {
             switch (s) {
-                case "left" : {
+                case "left":
                     if (answer[0] <= -x) {
                         continue;
                     }
                     answer[0] -= 1;
-                }
-                continue;
-                case "right": {
+                    continue;
+                case "right":
                     if (answer[0] >= x) {
                         continue;
                     }
                     answer[0] += 1;
-                }
-                continue;
-                case "up": {
+                    continue;
+                case "up":
                     if (answer[1] >= y) {
                         continue;
                     }
                     answer[1] += 1;
-                }
-                continue;
-                default: {
+                    continue;
+                default:
                     if (answer[1] <= -y) {
                         continue;
                     }
                     answer[1] -= 1;
                     break;
-                }
             }
         }
         return answer;
